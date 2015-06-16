@@ -43,7 +43,7 @@
 									<img class="profile-img" src="img/Team-Members.png"/>
 								</div>
 							</div>
-							<html:form action="/login.do" method="POST">
+							<html:form action="/login" method="POST">
 								<div class="form-group">
 									<label>Username</label>
 									<input class="form-control" placeholder="Username" name="username" type="text" />

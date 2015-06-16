@@ -8,7 +8,7 @@
 	</head>
 	<body>
 		<html:form action="/main">
-			<html:hidden property="login_id"/><html:errors property="login_id"/><br/>
+			<html:hidden property="login_username"/><br/>
 			
 		</html:form>
 	</body>

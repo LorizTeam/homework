@@ -22,11 +22,19 @@ public class MainForm extends ActionForm {
 	 */
 
 	/** login_id property */
-	private String login_id;
+	private String login_username;
 
 	/*
 	 * Generated Methods
 	 */
+
+	public String getLogin_username() {
+		return login_username;
+	}
+
+	public void setLogin_username(String loginUsername) {
+		login_username = loginUsername;
+	}
 
 	/** 
 	 * Method validate
@@ -53,15 +61,4 @@ public class MainForm extends ActionForm {
 	 * Returns the login_id.
 	 * @return String
 	 */
-	public String getLogin_id() {
-		return login_id;
-	}
-
-	/** 
-	 * Set the login_id.
-	 * @param login_id The login_id to set
-	 */
-	public void setLogin_id(String login_id) {
-		this.login_id = login_id;
-	}
 }

@@ -6,12 +6,18 @@ package com.smict.struts.action;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import org.apache.struts.action.Action;
 import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
 import com.smict.struts.form.LoginForm;
-
+//for sql database
+import com.smict.struts.data.dbconnect;
+import java.sql.*;
+import java.util.*;
+import com.smict.struts.data.user;
+//for main.jsp
 /** 
  * MyEclipse Struts
  * Creation date: 06-16-2015
@@ -34,7 +40,26 @@ public class LoginAction extends Action {
 	 */
 	public ActionForward execute(ActionMapping mapping, ActionForm form,
 			HttpServletRequest request, HttpServletResponse response) {
-		LoginForm loginForm = (LoginForm) form;// TODO Auto-generated method stub
-		return mapping.findForward("success");
+		LoginForm loginForm = (LoginForm) form;
+		String username = request.getParameter("username")
+		,password = request.getParameter("password"),forwardText = "";
+		user user = new user();
+		ArrayList getuser = new ArrayList();
+		HttpSession session = request.getSession();
+		// TODO Auto-generated method stub
+		try {
+			getuser=user.search_user(username,password);
+			if(getuser.size() > 0){
+				session.setAttribute("username",getuser.get(0));
+				forwardText = "success";
+			}
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return mapping.findForward(forwardText);
 	}
 }
