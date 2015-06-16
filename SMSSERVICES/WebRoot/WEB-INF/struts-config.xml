@@ -6,6 +6,12 @@
   <form-beans >
     <form-bean name="loginForm" type="com.smict.struts.form.LoginForm" />
     <form-bean name="mainForm" type="com.smict.struts.form.MainForm" />
+    <form-bean name="excelimportForm" type="com.smict.struts.form.ExcelimportForm" />
+    <form-bean name="sendSMSForm" type="com.smict.struts.form.SendSMSForm" />
+    <form-bean name="showschedulesmsForm" type="com.smict.struts.form.ShowschedulesmsForm" />
+    <form-bean name="contactForm" type="com.smict.struts.form.ContactForm" />
+    <form-bean name="smstemplateForm" type="com.smict.struts.form.SmstemplateForm" />
+    <form-bean name="reportForm" type="com.smict.struts.form.ReportForm" />
 
   </form-beans>
 
@@ -29,6 +35,60 @@
       path="/main"
       scope="request"
       type="com.smict.struts.action.MainAction">
+      <set-property property="cancellable" value="true" />
+    </action>
+    <action
+      attribute="excelimportForm"
+      input="/excelimport.jsp"
+      name="excelimportForm"
+      path="/excelimport"
+      scope="request"
+      type="com.smict.struts.action.ExcelimportAction">
+      <set-property property="cancellable" value="true" />
+    </action>
+    <action
+      attribute="sendSMSForm"
+      input="/sendSMS.jsp"
+      name="sendSMSForm"
+      path="/sendSMS"
+      scope="request"
+      type="com.smict.struts.action.SendSMSAction">
+      <set-property property="cancellable" value="true" />
+    </action>
+    <action
+      attribute="showschedulesmsForm"
+      input="/showschedulesms.jsp"
+      name="showschedulesmsForm"
+      path="/showschedulesms"
+      scope="request"
+      type="com.smict.struts.action.ShowschedulesmsAction">
+      <set-property property="cancellable" value="true" />
+    </action>
+    <action
+      attribute="contactForm"
+      input="/contact.jsp"
+      name="contactForm"
+      path="/contact"
+      scope="request"
+      type="com.smict.struts.action.ContactAction">
+      <set-property property="cancellable" value="true" />
+    </action>
+    <action
+      attribute="smstemplateForm"
+      input="/smstemplate.jsp"
+      name="smstemplateForm"
+      path="/smstemplate"
+      scope="request"
+      type="com.smict.struts.action.SmstemplateAction">
+      <set-property property="cancellable" value="true" />
+    </action>
+    <action
+      attribute="reportForm"
+      input="/report.jsp"
+      name="reportForm"
+      path="/report"
+      scope="request"
+      type="com.smict.struts.action.ReportAction">
       <set-property property="cancellable" value="true" />
     </action>
 
