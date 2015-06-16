@@ -1,3 +1,9 @@
+<%@ page language="java" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://struts.apache.org/tags-bean" prefix="bean"%> 
+<%@ taglib uri="http://struts.apache.org/tags-html" prefix="html"%>
+<%@ page import ="javax.servlet.http.HttpServletRequest.*"%>
+<%@ page import ="javax.servlet.http.HttpServletResponse.*"%>
+<%@ page import ="javax.servlet.http.HttpSession.*"%>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -37,7 +43,7 @@
 									<img class="profile-img" src="img/Team-Members.png"/>
 								</div>
 							</div>
-							<form action="#">
+							<html:form action="/login.do" method="POST">
 								<div class="form-group">
 									<label>Username</label>
 									<input class="form-control" placeholder="Username" name="username" type="text" />
@@ -47,7 +53,7 @@
 									<input class="form-control" placeholder="Password" name="password" type="password"/>
 								</div>
 								<input class="btn btn-md btn-primary btn-block" type="submit" value="Login" />
-							</form>
+							</html:form>
 						</div>
 					</div>
 				</div>

@@ -3,10 +3,36 @@
 
 <struts-config>
   <data-sources />
-  <form-beans />
+  <form-beans >
+    <form-bean name="loginForm" type="com.smict.struts.form.LoginForm" />
+    <form-bean name="mainForm" type="com.smict.struts.form.MainForm" />
+
+  </form-beans>
+
   <global-exceptions />
   <global-forwards />
-  <action-mappings />
+  <action-mappings >
+    <action
+      attribute="loginForm"
+      input="/login.jsp"
+      name="loginForm"
+      path="/login"
+      type="com.smict.struts.action.LoginAction">
+      <set-property property="cancellable" value="true" />
+      <forward name="success" path="/main.jsp" />
+    </action>
+    <action
+      attribute="mainForm"
+      input="/main.jsp"
+      name="mainForm"
+      path="/main"
+      scope="request"
+      type="com.smict.struts.action.MainAction">
+      <set-property property="cancellable" value="true" />
+    </action>
+
+  </action-mappings>
+
   <message-resources parameter="com.smict.struts.ApplicationResources" />
 </struts-config>
 
