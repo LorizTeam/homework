@@ -43,6 +43,11 @@
 									<img class="profile-img" src="img/Team-Members.png"/>
 								</div>
 							</div>
+							<%String login = (String) session.getAttribute("login");
+							if(login =="0"){%>
+							Username and Password Incorrect
+							<%
+							} %>
 							<html:form action="/login" method="POST">
 								<div class="form-group">
 									<label>Username</label>

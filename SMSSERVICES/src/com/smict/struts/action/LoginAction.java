@@ -51,7 +51,13 @@ public class LoginAction extends Action {
 			getuser=user.search_user(username,password);
 			if(getuser.size() > 0){
 				session.setAttribute("username",getuser.get(0));
+				session.setAttribute("emptype",getuser.get(5));
+				session.setAttribute("login","1");
 				forwardText = "success";
+			}
+			else{
+				session.setAttribute("login","0");
+				forwardText = "notsuccess";
 			}
 		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block
